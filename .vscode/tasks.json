@@ -11,7 +11,8 @@
 				"${fileDirname}/*.cpp",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}",
-				"-lwiringPi"
+				"-l",
+                "wiringPi"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
