@@ -49,9 +49,9 @@ void Tijdsduur::print() const{
         cout<< "\t\t\t" << sec << " seconden";
 }
 
-int Tijdsduur::deTimerTijd(){
-    sec = sec + (min * 60);
-    return sec;
+int Tijdsduur::deTimerTijd() const{ 
+    int temp = sec + (min * 60);
+    return temp;
 }
 
 void Tijdsduur::normaliseer(){

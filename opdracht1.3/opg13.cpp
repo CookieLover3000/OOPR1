@@ -34,5 +34,7 @@ int main() {
     Tijdsduur t4(3,122); // t4 is 3 minuten plus 122 seconden
     cout<<"t4 = "; t4.print(); cout<<endl;
     cout<<"het totaal aantal seconde van t4 = "<<t4.deTimerTijd()<<endl;
+    cout<<"t4 = "; t4.print(); cout<<endl;
+    cout<<"het totaal aantal seconde van kw = "<<kw.deTimerTijd()<<endl;
     return 0;
 }

@@ -11,7 +11,7 @@ public:
     void erbij(const Tijdsduur& t);
     void maal(int a);
     void print() const;
-    int deTimerTijd();
+    int deTimerTijd() const;
 
 private:	
     int min;
@@ -19,4 +19,4 @@ private:
     void normaliseer();
 };
 
-#endif // TIJDSDUUR_H
+#endif
