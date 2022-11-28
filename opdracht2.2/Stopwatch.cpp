@@ -13,9 +13,9 @@ Stopwatch::Stopwatch() : begintijd(0), eindtijd(0)
 	//	 gettimeofday(&eindtijd, 0);
 }
 
-// Stopwatch::~Stopwatch() {
-//
-// }
+//Stopwatch::~Stopwatch()
+//{
+//}
 
 void Stopwatch::reset()
 {
@@ -25,7 +25,6 @@ void Stopwatch::reset()
 
 void Stopwatch::begin()
 {
-
 	struct timeval tijd;
 	gettimeofday(&tijd, 0);
 	begintijd = tijd.tv_sec;
@@ -40,6 +39,5 @@ void Stopwatch::stop()
 
 unsigned int Stopwatch::deTijd() const
 {
-
 	return eindtijd - begintijd;
 }

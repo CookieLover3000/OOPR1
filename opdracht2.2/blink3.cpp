@@ -27,8 +27,11 @@ int main(void)
    Bij logld2 is de eigenaar anoniem en heeft een maximale brandtijd van 2 seconden.
   */
 
-  Logled logld1(&miniC, 18, "Rood", "iwan van Oort", 4);
-  logld1.zetAan();
+Logled logld1(&miniC,18, "Rood", "Pietje Puk",4);
+logld1.zetAan();
+usleep(TIMELEDON);
+logld1.zetUit();
+cout<<"De led is 3 seconden aan geweest"<<endl;
 
   return 0;
 }

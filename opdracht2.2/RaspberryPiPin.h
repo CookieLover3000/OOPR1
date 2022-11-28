@@ -17,7 +17,7 @@ public:
     void gpioNr(int);
 
 private:
-    int richting = INPUT;
+    int richting = OUTPUT; // aangepast voor DDD was eerst INPUT
     int pinNr;
     int status;
 };
