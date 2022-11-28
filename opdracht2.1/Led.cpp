@@ -4,14 +4,11 @@
 
 Led::Led(RaspberryPi* pi,int n): pinNr(n),eigenaar("Een geheim"),status(0), Pi(pi)
 {
-    pinMode(pinNr,OUTPUT);
     pi->koppelAansluiting(n);
-
 }
 
 Led::Led(RaspberryPi* pi,int n, string a, string b): pinNr(n),kleur(a),eigenaar(b),status(0), Pi(pi)
 {
-    pinMode(pinNr,OUTPUT);
     pi->koppelAansluiting(n);
 } 
 
