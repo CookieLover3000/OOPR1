@@ -1,3 +1,4 @@
+/* Iwan van Oort - 20148410 */
 #ifndef LOGLED_H
 #define LOGLED_H
 
@@ -13,11 +14,13 @@ class Logled
 {
 public:
     Logled(RaspberryPi *, int, string, string, int);
+    Logled(RaspberryPi *, int, int);
     ~Logled();
     void zetAan();
     void zetUit();
     bool ledStatus();
     unsigned int hoeveelTijdTeGaan();
+    string deEigenaar();
 
 private:
     bool status;
