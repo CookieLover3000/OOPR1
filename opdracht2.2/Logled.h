@@ -21,6 +21,7 @@ public:
 
 private:
     bool status;
+    int pinNr;
     string eigendomVan;
     Tijdsduur branduren;
     Stopwatch tijdmeting;
