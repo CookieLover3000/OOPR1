@@ -18,7 +18,7 @@ int main (void)
     De raspberry pi wordt gebruikt om de pinnen aan te sturen.
  */
 
-  RaspberryPi miniC(123456); //vul hier je eigen studienummer in.
+  RaspberryPi miniC(20148410); //vul hier je eigen studienummer in.
 
 /*
  De led ld1 wordt aangesloten op pin18 en heeft
@@ -27,12 +27,12 @@ int main (void)
 */ 
 
 
-  Led ld1(&miniC,18, "Rood", "Pietje Puk");
+  Led ld1(&miniC,18, "Rood", "Iwan");
   Led ld2(&miniC,23);
 
 
   cout<<"De eigenaar van ld1="<<ld1.deEigenaar()<<endl;
-  cout<<"De eigenaar van ld1="<<ld2.deEigenaar()<<endl;
+  cout<<"De eigenaar van ld2="<<ld2.deEigenaar()<<endl;
 
   for (;;)
   {

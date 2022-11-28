@@ -23,6 +23,7 @@ void RaspberryPi::zetPinMode(int nr,int m) {
 
 void RaspberryPi::pinWaarde(int nr,int x) {
     digitalWrite(nr,x);
+    waarde.waardePin(x);
 }
 
  bool RaspberryPi::koppelAansluiting(int nr) {

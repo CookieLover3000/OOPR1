@@ -19,6 +19,7 @@ class RaspberryPi
   private:
     int productienummer;
     RaspberryPiPin pinnen[AANTALPINNEN];
+    RaspberryPiPin waarde;
    
 };
 
