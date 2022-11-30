@@ -21,11 +21,12 @@ Logled::~Logled()
 
 void Logled::zetAan()
 {
-    if (hoeveelTijdTeGaan() > 0){
-    tijdmeting.reset();
-    tijdmeting.begin();
-    status = true;
-    Pi->pinWaarde(pinNr, status);
+    if (hoeveelTijdTeGaan() > 0)
+    {
+        tijdmeting.reset();
+        tijdmeting.begin();
+        status = true;
+        Pi->pinWaarde(pinNr, status);
     }
 }
 
@@ -34,8 +35,6 @@ void Logled::zetUit()
     tijdmeting.stop();
     status = false;
     Pi->pinWaarde(pinNr, status);
-
-
 }
 
 bool Logled::ledStatus()
@@ -46,12 +45,12 @@ bool Logled::ledStatus()
 unsigned int Logled::hoeveelTijdTeGaan()
 {
     branduren.eraf(tijdmeting.deTijd());
-    if (branduren.deTimerTijd() < 0) {
+    if (branduren.deTimerTijd() < 0)
         return 0;
-    }
     return branduren.deTimerTijd();
 }
 
-string Logled::deEigenaar() {
+string Logled::deEigenaar()
+{
     return eigendomVan;
 }
