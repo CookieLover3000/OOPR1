@@ -23,6 +23,7 @@ Led ld1(18, "Rood", "Iwan"); //Zet hier je eigen naam in
 Led ld2(23);
 cout<<"De eigenaar van ld1 is "<<ld1.deEigenaar()<<endl;
 cout<<"De eigenaar van ld1 is"<<ld2.deEigenaar()<<endl;
+
 for (;;)
 {
 ld1.zetAan();
