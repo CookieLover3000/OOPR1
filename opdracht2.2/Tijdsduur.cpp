@@ -63,13 +63,15 @@ int Tijdsduur::deTimerTijd() const
 
 void Tijdsduur::normaliseer()
 {
+    int temp = (min * 60) + sec;
 
-    if (sec < 0)
+    if (temp < 0)
     {
-        int temp = (min * 60) + sec;
-        min = temp / 60;
-        sec = temp % 60;
+        min = 0;
+        sec = 0;
     }
+    
+    /*
     while (sec >= 60)
     {
         min++;
@@ -99,7 +101,7 @@ void Tijdsduur::normaliseer()
     {
         min++;
         sec -= 60;
-    }
+    }*/
 }
 
 Tijdsduur::~Tijdsduur()

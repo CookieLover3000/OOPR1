@@ -15,8 +15,8 @@ public:
     int deTimerTijd() const;
 
 private:
-    int min;
-    int sec;
+    unsigned int min;
+    unsigned int sec;
     void normaliseer();
 };
 

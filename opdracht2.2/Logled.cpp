@@ -8,11 +8,13 @@ using namespace std;
 Logled::Logled(RaspberryPi *pi, int pin, string kleur, string naam, int duratie) : status(false), eigendomVan(naam), Pi(pi), branduren(duratie), pinNr(pin)
 {
     pi->koppelAansluiting(pin);
+    pi->zetPinMode(pin,OUTPUT);
 }
 
 Logled::Logled(RaspberryPi *pi, int pin, int duratie) : status(false), eigendomVan("Geheim"), Pi(pi), branduren(duratie), pinNr(pin)
 {
     pi->koppelAansluiting(pin);
+    pi->zetPinMode(pin,OUTPUT);
 }
 
 Logled::~Logled()
@@ -21,9 +23,10 @@ Logled::~Logled()
 
 void Logled::zetAan()
 {
+    tijdmeting.reset();
     if (hoeveelTijdTeGaan() > 0)
     {
-        tijdmeting.reset();
+
         tijdmeting.begin();
         status = true;
         Pi->pinWaarde(pinNr, status);
@@ -33,6 +36,7 @@ void Logled::zetAan()
 void Logled::zetUit()
 {
     tijdmeting.stop();
+    branduren.eraf(tijdmeting.deTijd());
     status = false;
     Pi->pinWaarde(pinNr, status);
 }
@@ -44,9 +48,7 @@ bool Logled::ledStatus()
 
 unsigned int Logled::hoeveelTijdTeGaan()
 {
-    branduren.eraf(tijdmeting.deTijd());
-    if (branduren.deTimerTijd() < 0)
-        return 0;
+//    branduren.eraf(tijdmeting.deTijd());
     return branduren.deTimerTijd();
 }
 
