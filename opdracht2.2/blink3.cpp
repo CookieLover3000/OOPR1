@@ -27,6 +27,7 @@ int main(void)
   Logled logld2(&miniC, 23, 2);
   cout << "De eigenaar van ld1=" << logld1.deEigenaar() << endl;
   cout << "De eigenaar van ld1=" << logld2.deEigenaar() << endl;
+  
   logld1.zetAan();
   logld2.zetAan();
   usleep(TIMELEDON);
