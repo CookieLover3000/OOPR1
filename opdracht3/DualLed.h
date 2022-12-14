@@ -4,16 +4,18 @@
 #include <string>
 #include "Led.h"
 #include "RaspberryPi.h"
+#include "weerstand.h"
 
 using namespace std;
 #pragma once
 
 #define OUTPUT 1
 
-class DualLed: public Led
+class DualLed : public Led
 {
 public:
     DualLed();
+    DualLed(RaspberryPi *, const Weerstand *,const Weerstand *,int,int,string,string,string, double);
     ~DualLed();
     virtual bool zetAan(string);
     virtual void zetUit();
@@ -27,7 +29,8 @@ private:
     int pinnummer1;
     int pinnummer2;
     int aangesloten;
-    RaspberryPi* pi;
-
+    RaspberryPi *pi;
+    const Weerstand *weerstand1;
+    const Weerstand *weerstand2;
 };
 #endif

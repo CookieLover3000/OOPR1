@@ -14,8 +14,7 @@ using namespace std;
 class SingleLed : public Led
 {
 public:
-    SingleLed(RaspberryPi *, int, const Weerstand*, string, string, double);
-    SingleLed(const SingleLed &);
+    SingleLed(RaspberryPi *, int, const Weerstand *, string, string, double);
     ~SingleLed();
     bool zetAan(string);
     void zetUit();
