@@ -3,30 +3,32 @@
 
 #include <string>
 #include "Led.h"
-#include "RaspberryPi.h"
 #include "weerstand.h"
+#include "RaspberryPi.h"
 
 using namespace std;
 #pragma once
 
 #define OUTPUT 1
 
-class SingleLed
+class SingleLed : public Led
 {
 public:
-    SingleLed(RaspberryPi*,int,Weerstand*,string,string, double);
+    SingleLed(RaspberryPi *, int, const Weerstand*, string, string, double);
+    SingleLed(const SingleLed &);
     ~SingleLed();
-    virtual bool zetAan(string);
-    virtual void zetUit();
-    virtual int connectie();
-    virtual int ledStatus();
+    bool zetAan(string);
+    void zetUit();
+    int connectie();
+    int ledStatus();
 
 private:
     string kleur;
     int status;
     int pinNummer;
     int aangesloten;
-    RaspberryPi* pi;
-    Weerstand* weerstand;
+    RaspberryPi *pi;
+    const Weerstand *weer;
+    Led *led;
 };
 #endif

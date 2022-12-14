@@ -2,8 +2,8 @@
 #define WEERSTAND_H
 
 #include <string>
-#include "SingleLed.h"
-#include <DualLed.h>
+//#include "SingleLed.h"
+//#include "DualLed.h"
 
 using namespace std;
 #pragma once

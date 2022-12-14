@@ -2,7 +2,6 @@
 #define LED_H
 
 #include <string>
-#include "RaspberryPi.h"
 
 using namespace std;
 #pragma once
@@ -12,20 +11,18 @@ using namespace std;
 class Led
 {
 public:
-  Led(int);
-  Led(int, string, string);
-  ~Led();
-  virtual bool zetAan();
-  virtual void zetUit();
-  virtual int connectie();
-  virtual int ledStatus();
+  virtual bool zetAan(string) = 0;
+  virtual void zetUit() = 0;
+  virtual int connectie() = 0;
+  virtual int ledStatus() = 0;
   void veranderLichtsterkte(double);
   double hoeveelheidlicht();
   string deEigenaar();
 
+protected:
+  string eigenaar;
+
 private:
-  string kleur;
   double lichtsterkte;
-  RaspberryPi* pi;
 };
 #endif

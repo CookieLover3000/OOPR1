@@ -1,23 +1,14 @@
 #include "Led.h"
 
-bool Led::zetAan()
-{
-}
-void Led::zetUit()
-{
-}
-int Led::connectie()
-{
-}
-int Led::ledStatus()
-{
-}
 void Led::veranderLichtsterkte(double a)
 {
+    lichtsterkte = a; 
 }
 double Led::hoeveelheidlicht()
 {
+    return lichtsterkte;
 }
 string Led::deEigenaar()
 {
+    return eigenaar;
 }
