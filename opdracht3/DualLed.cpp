@@ -6,10 +6,10 @@ DualLed::DualLed()
 
 DualLed::DualLed(RaspberryPi *raspi, const Weerstand *resistance1, const Weerstand *resistance2, int pin1, int pin2, string color1, string color2, string naam, double sterkte) : Led(naam, sterkte), kleur(color1), kleur1(color2), status(0), pinnummer1(pin1), pinnummer2(pin2), pi(raspi), weerstand1(resistance1), weerstand2(resistance2), aangesloten(1)
 {
-    pi->koppelAansluiting(pin1);
-    pi->zetPinMode(pin1, OUTPUT);
-    pi->koppelAansluiting(pin2);
-    pi->zetPinMode(pin2, OUTPUT);
+    pi->koppelAansluiting(pinnummer1);
+    pi->zetPinMode(pinnummer1, OUTPUT);
+    pi->koppelAansluiting(pinnummer2);
+    pi->zetPinMode(pinnummer2, OUTPUT);
 }
 DualLed::~DualLed()
 {
@@ -23,7 +23,7 @@ bool DualLed::zetAan(string k)
         return true;
     }
 
-    if (kleur1.compare(k) == 0)
+    else if (kleur1.compare(k) == 0)
     {
         pi->pinWaarde(pinnummer2, 1);
         return true;
@@ -33,13 +33,15 @@ bool DualLed::zetAan(string k)
 
 void DualLed::zetUit()
 {
-    pi->pinWaarde(pinnummer1, 1);
-    pi->pinWaarde(pinnummer2, 1);
+    pi->pinWaarde(pinnummer1, 0);
+    pi->pinWaarde(pinnummer2, 0);
 }
 
-int DualLed::connectie()
+string DualLed::connectie()
 {
-    return aangesloten;
+    string a = to_string(pinnummer1);
+    string b = to_string(pinnummer2);
+    return a + " " + b;
 }
 
 int DualLed::ledStatus()

@@ -2,6 +2,7 @@
 #define WEERSTAND_H
 
 #include <string>
+#include <iostream>
 // #include "SingleLed.h"
 // #include "DualLed.h"
 

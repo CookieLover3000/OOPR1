@@ -2,6 +2,10 @@
 #define DUALLED_H
 
 #include <string>
+#include <iostream>
+#include <tuple>
+#include <vector>
+
 #include "Led.h"
 #include "RaspberryPi.h"
 #include "weerstand.h"
@@ -15,12 +19,12 @@ class DualLed : public Led
 {
 public:
     DualLed();
-    DualLed(RaspberryPi *, const Weerstand *,const Weerstand *,int,int,string,string,string, double);
+    DualLed(RaspberryPi *, const Weerstand *, const Weerstand *, int, int, string, string, string, double);
     ~DualLed();
-    virtual bool zetAan(string);
-    virtual void zetUit();
-    virtual int connectie();
-    virtual int ledStatus();
+    bool zetAan(string);
+    void zetUit();
+    string connectie();
+    int ledStatus();
 
 private:
     string kleur1;

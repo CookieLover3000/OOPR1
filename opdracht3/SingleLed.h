@@ -15,10 +15,11 @@ class SingleLed : public Led
 {
 public:
     SingleLed(RaspberryPi *, int, const Weerstand *, string, string, double);
+    SingleLed(const SingleLed& r);
     ~SingleLed();
     bool zetAan(string);
     void zetUit();
-    int connectie();
+    string connectie();
     int ledStatus();
 
 private:
@@ -29,5 +30,6 @@ private:
     RaspberryPi *pi;
     const Weerstand *weer;
     Led *led;
+    bool aangemaakt = false;
 };
 #endif

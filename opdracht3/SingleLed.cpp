@@ -6,8 +6,16 @@ SingleLed::SingleLed(RaspberryPi *raspi, int nummer, const Weerstand *stand, str
     pi->zetPinMode(pinNummer, OUTPUT);
     pi->pinWaarde(pinNummer, OUTPUT);
 }
+SingleLed::SingleLed(const SingleLed &L) : Led(L), weer(0), kleur(L.kleur), status(L.status), pinNummer(L.pinNummer), aangesloten(L.aangesloten), pi(L.pi)
+{
+    if (L.weer != 0)
+        weer = new Weerstand(*(L.weer));
+    aangemaakt = true;
+}
 SingleLed::~SingleLed()
 {
+    if (aangemaakt)
+        delete weer;
 }
 
 bool SingleLed::zetAan(string k)
@@ -25,9 +33,10 @@ void SingleLed::zetUit()
     pi->pinWaarde(pinNummer, 0);
 }
 
-int SingleLed::connectie()
+string SingleLed::connectie()
 {
-    return aangesloten;
+    string a = to_string(pinNummer);
+    return a;
 }
 int SingleLed::ledStatus()
 {
