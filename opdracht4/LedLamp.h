@@ -5,6 +5,7 @@
 #include "Led.h"
 #include <iostream>
 #include <vector>
+#include <numeric>
 
 using namespace std;
 #pragma once

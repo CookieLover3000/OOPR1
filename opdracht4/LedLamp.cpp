@@ -22,13 +22,15 @@ void LedLamp::zetUit()
 }
 string LedLamp::connectie()
 {
-    string waarde = "";
+    string waarde;
     string kluis;
     for (int i = 0; i < leds.size(); i++)
     {
-        if (leds.at(i) == NULL)
+        if (leds.at(i) != NULL)
+        {
             waarde = leds.at(i)->connectie();
-        kluis += " " + waarde;
+            kluis = kluis + "\n" + waarde;
+        }
     }
     return kluis;
 }
