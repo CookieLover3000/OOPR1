@@ -19,19 +19,19 @@ int main()
 
     string ledKleur1 = "groen";
     string ledKleur2 = "rood";
-    string eigenaar = "Pietje Puk";
+    string eigenaar = "Iwan";
 
     lampje.voegLedToe(new SingleLed(&miniC, 18, &r1, ledKleur1, eigenaar, 0.9));
     lampje.voegLedToe(new DualLed(&miniC, &r2, &r3, 23, 24, ledKleur1, ledKleur2, eigenaar, 1.2));
     lampje.voegLedToe(new SingleLed(&miniC, 25, &r1, ledKleur1, eigenaar, 0.9));
 
-    lampje.zetAan("Rood");
+    lampje.zetAan("rood");
     sleep(3);
-    lampje.zetAan("Groen");
+    lampje.zetAan("groen");
     sleep(3);
     lampje.zetUit();
     sleep(1);
-    cout << "connectie(s) van ll:" << lampje.connectie() << endl;
+    cout << "connectie(s) van ll: " << lampje.connectie() << endl;
 
     return 0;
 }
