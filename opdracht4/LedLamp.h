@@ -4,6 +4,7 @@
 #include <string>
 #include <Led.h>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 #pragma once
@@ -13,12 +14,13 @@ using namespace std;
 class LedLamp
 {
 public:
-bool zetAan(string);
-void zetUit();
-string connectie();
-void voegLedToe(Led*);
-bool ledStatus();
+    bool zetAan(string);
+    void zetUit();
+    string connectie();
+    void voegLedToe(Led *);
+    bool ledStatus();
 
 private:
+    vector<Led *> leds;
 };
 #endif
