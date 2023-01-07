@@ -29,7 +29,7 @@ string LedLamp::connectie()
         if (leds.at(i) != NULL)
         {
             waarde = leds.at(i)->connectie();
-            kluis = kluis + "\n" + waarde;
+            kluis = kluis + " " + waarde;
         }
     }
     return kluis;
