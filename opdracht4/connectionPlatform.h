@@ -12,6 +12,7 @@ using namespace std;
 class ConnectionPlatform
 {
 public:
+virtual ~ConnectionPlatform(){}
 virtual void pinWaarde(int,int) = 0;
 virtual void zetPinMode(int,int) = 0;
 virtual bool koppelAansluiting(int) = 0;

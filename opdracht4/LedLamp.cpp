@@ -7,7 +7,7 @@ bool LedLamp::zetAan(string k)
     for (int i = 0; i < leds.size(); i++)
     {
         if (leds.at(i) != NULL)
-            waarde |= leds.at(i)->zetAan(k);
+            waarde |= leds[i]->zetAan(k);
     }
     return waarde;
 }
