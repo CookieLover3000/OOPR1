@@ -1,4 +1,3 @@
-/* OOPR1 - Iwan van Oort */
 #include <iostream>
 #include <iomanip>
 #include "Tijdsduur.h"
