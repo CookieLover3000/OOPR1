@@ -18,15 +18,15 @@ TEST(TestGroep, checkDeTimerTijd)
 
 TEST(TestGroep, checkEraf)
 {
-    Tijdsduur tijd(5,8);
-    tijd.eraf(10);
-    CHECK_EQUAL(298, tijd.deTimerTijd());
+    Tijdsduur tijd(-1,8);
+    tijd.eraf(80);
+    CHECK_EQUAL(0, tijd.deTimerTijd());
 }
 TEST(TestGroep, checkErbij)
 {
-    Tijdsduur tijd(5,8);
+    Tijdsduur tijd(-8);
     tijd.erbij(10);
-    CHECK_EQUAL(318, tijd.deTimerTijd());
+    CHECK_EQUAL(2, tijd.deTimerTijd());
 }
 TEST(TestGroep, checkMaal)
 {
@@ -51,8 +51,11 @@ TEST(TestGroep2, checkTijdTeGaan2)
     led.zetAan();
     sleep(1);
     led.zetUit();
+    led.zetAan();
+    sleep(4);
+    led.zetUit();
 
-    CHECK_EQUAL(3, led.hoeveelTijdTeGaan());
+    CHECK_EQUAL(0, led.hoeveelTijdTeGaan());
 }
 
 int main(int argc, char *argv[])

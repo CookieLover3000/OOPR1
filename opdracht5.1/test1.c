@@ -33,7 +33,7 @@ TEST(FirstTestGroup, boektest2)
     test1 = fb2.naamSchrijver();
     fb2.verhoogSchrijver();
     test2 = fb2.naamSchrijver();
-    STRCMP_EQUAL(test1.c_str(), test2.c_str());
+    STRCMP_EQUAL("Iwan1", test2.c_str());
 }
 TEST(FirstTestGroup, boektest3)
 {

@@ -7,6 +7,7 @@ using namespace std;
 // De definities van de memberfunctie van de ADT Tijdsduur, oftewel: de implementatie van de ADT Tijdsduur:
 Tijdsduur::Tijdsduur(int y) : min(0), sec(y)
 {
+    normaliseer();
 }
 
 Tijdsduur::Tijdsduur(int x, int y) : min(x), sec(y)
