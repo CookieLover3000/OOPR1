@@ -1,4 +1,3 @@
-
 #ifndef LOGLED_H
 #define LOGLED_H
 
