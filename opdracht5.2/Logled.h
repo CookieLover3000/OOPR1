@@ -1,4 +1,3 @@
-/* Iwan van Oort - 20148410 */
 #ifndef LOGLED_H
 #define LOGLED_H
 
