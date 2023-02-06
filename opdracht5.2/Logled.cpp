@@ -1,4 +1,3 @@
-/* 20148410  - Iwan van Oort */
 #include "Logled.h"
 #include <iostream>
 #include <unistd.h>
