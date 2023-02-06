@@ -23,7 +23,7 @@ int main(void)
   als eigenaar Pietje Puk en een maximale brandtijd van 4 seconden.
   Bij logld2 is de eigenaar anoniem en heeft een maximale brandtijd van 2 seconden.
   */
-  Logled logld1(&miniC, 18, "Rood", "Iwan van Oort", 4);
+  Logled logld1(&miniC, 18, "Rood", "Iwan", 4);
   Logled logld2(&miniC, 23, 2);
   cout << "De eigenaar van ld1=" << logld1.deEigenaar() << endl;
   cout << "De eigenaar van ld1=" << logld2.deEigenaar() << endl;
