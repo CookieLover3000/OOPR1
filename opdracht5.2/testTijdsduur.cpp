@@ -38,7 +38,7 @@ TEST(TestGroep, checkMaal)
 TEST(TestGroep2, checkTijdTeGaan)
 {
     RaspberryPi pi(20148410);
-    Logled led(&pi, 18, "Rood", "Iwan van Oort", 4);
+    Logled led(&pi, 18, "Rood", "Iwan", 4);
 
     CHECK_EQUAL(4, led.hoeveelTijdTeGaan());
 }
@@ -46,7 +46,7 @@ TEST(TestGroep2, checkTijdTeGaan)
 TEST(TestGroep2, checkTijdTeGaan2)
 {
     RaspberryPi pi(20148410);
-    Logled led(&pi, 18, "Rood", "Iwan van Oort", 4);
+    Logled led(&pi, 18, "Rood", "Iwan", 4);
     
     led.zetAan();
     sleep(1);
